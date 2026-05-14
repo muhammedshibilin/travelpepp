@@ -3,16 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Calendar, Menu, X, ChevronDown, Globe } from 'lucide-react';
+import { Calendar, Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/ui/logo';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -57,54 +51,27 @@ export function Navbar() {
         <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <div key={link.name} className="relative group">
-              {link.dropdown ? (
-                <DropdownMenu modal={false}>
-                  <DropdownMenuTrigger className={cn(
-                    "flex items-center gap-1.5 text-sm font-semibold tracking-wide transition-all duration-300 hover:text-brand-gold outline-none",
-                    isScrolled ? "text-brand-black dark:text-brand-silver" : "text-white/90"
-                  )}>
-                    {link.name}
-                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent 
-                    align="center" 
-                    className="w-56 bg-white/95 dark:bg-brand-black/95 backdrop-blur-2xl border-brand-silver/10 p-2 shadow-2xl animate-in fade-in zoom-in duration-300"
-                  >
-                    {link.dropdown.map((sub) => (
-                      <DropdownMenuItem key={sub.name} className="p-0">
-                        <Link 
-                          href={sub.href} 
-                          className="flex items-center w-full px-4 py-3 cursor-pointer rounded-lg hover:bg-brand-blue/5 hover:text-brand-blue dark:hover:text-brand-gold transition-all duration-200 font-medium"
-                        >
-                          {sub.name}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : (
-                <Link
-                  href={link.href}
-                  onClick={() => setActiveSection(link.name)}
-                  className={cn(
-                    "text-sm font-semibold tracking-wide transition-all duration-300 relative py-2",
-                    isScrolled 
-                      ? activeSection === link.name ? "text-brand-blue" : "text-brand-black dark:text-brand-silver" 
-                      : activeSection === link.name ? "text-brand-gold" : "text-white/90 hover:text-white"
-                  )}
-                >
-                  {link.name}
-                  {activeSection === link.name && (
-                    <motion.div
-                      layoutId="nav-underline"
-                      className="absolute bottom-0 left-0 right-0 h-[3px] bg-brand-gold rounded-full"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                  <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-brand-gold/40 rounded-full transition-all duration-300 group-hover:w-full" />
-                </Link>
-              )}
+              <Link
+                href={link.href}
+                onClick={() => setActiveSection(link.name)}
+                className={cn(
+                  "text-sm font-semibold tracking-wide transition-all duration-300 relative py-2",
+                  isScrolled 
+                    ? activeSection === link.name ? "text-brand-blue" : "text-brand-black dark:text-brand-silver" 
+                    : activeSection === link.name ? "text-brand-gold" : "text-white/90 hover:text-white"
+                )}
+              >
+                {link.name}
+                {activeSection === link.name && (
+                  <motion.div
+                    layoutId="nav-underline"
+                    className="absolute bottom-0 left-0 right-0 h-[3px] bg-brand-gold rounded-full"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-brand-gold/40 rounded-full transition-all duration-300 group-hover:w-full" />
+              </Link>
             </div>
           ))}
         </nav>
