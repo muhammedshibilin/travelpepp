@@ -25,7 +25,6 @@ export function TravelAgencySchema() {
     "sameAs": [
       SEO_CONFIG.facebookPage,
       SEO_CONFIG.instagramProfile,
-      "https://twitter.com/travelpepp"
     ],
     "priceRange": "$$$"
   };

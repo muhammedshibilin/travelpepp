@@ -56,7 +56,7 @@ export function PackageCard({
         <div className="absolute bottom-6 right-6">
           <div className="flex flex-col items-end">
             <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Starting from</span>
-            <span className="text-2xl font-black text-brand-gold">${price}</span>
+            <span className="text-2xl font-black text-brand-gold">₹{price}</span>
           </div>
         </div>
       </div>
@@ -93,7 +93,10 @@ export function PackageCard({
         </div>
 
         <div className="mt-auto pt-6 border-t border-brand-silver/10">
-          <Button className="w-full h-14 rounded-2xl bg-brand-blue text-white hover:bg-brand-gold hover:text-brand-black transition-all duration-300 font-bold group">
+          <Button 
+            onClick={() => window.open('https://wa.me/918547069562', '_blank')}
+            className="w-full h-14 rounded-2xl bg-brand-blue text-white hover:bg-brand-gold hover:text-brand-black transition-all duration-300 font-bold group"
+          >
             Book This Tour
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>

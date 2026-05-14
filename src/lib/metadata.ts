@@ -49,7 +49,6 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: SEO_CONFIG.twitterHandle,
     },
     icons: {
       icon: '/favicon.ico',

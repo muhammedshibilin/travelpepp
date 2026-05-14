@@ -20,10 +20,12 @@ const navLinks = [
     name: 'Destinations', 
     href: '#destinations',
     dropdown: [
-      { name: 'Europe', href: '#europe' },
-      { name: 'Asia', href: '#asia' },
-      { name: 'Middle East', href: '#middle-east' },
-      { name: 'Africa', href: '#africa' },
+      { name: 'Kashmir', href: '#kashmir' },
+      { name: 'Leh Ladakh', href: '#leh-ladakh' },
+      { name: 'Himachal Pradesh', href: '#himachal' },
+      { name: 'Uttarakhand', href: '#uttarakhand' },
+      { name: 'Kerala', href: '#kerala' },
+      { name: 'Rajasthan', href: '#rajasthan' },
     ]
   },
   { name: 'Packages', href: '#packages' },
@@ -122,23 +124,10 @@ export function Navbar() {
 
         {/* Actions */}
         <div className="hidden lg:flex items-center gap-6">
-          <Link 
-            href="https://wa.me/918547069562" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              "flex items-center gap-2 text-sm font-bold transition-all duration-300 hover:scale-105",
-              isScrolled 
-                ? "text-brand-blue" 
-                : "text-white"
-            )}
+          <Button 
+            onClick={() => window.open('https://wa.me/918547069562', '_blank')}
+            className="bg-brand-blue hover:bg-brand-blue/90 text-white dark:bg-brand-gold dark:text-brand-black px-8 h-12 rounded-full font-bold shadow-xl shadow-brand-blue/20 dark:shadow-brand-gold/10 transition-all duration-300 hover:-translate-y-1 active:scale-95 group"
           >
-            <div className="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center">
-                <Phone className="w-4 h-4 text-green-500" />
-            </div>
-            +91 85470 69562
-          </Link>
-          <Button className="bg-brand-blue hover:bg-brand-blue/90 text-white dark:bg-brand-gold dark:text-brand-black px-8 h-12 rounded-full font-bold shadow-xl shadow-brand-blue/20 dark:shadow-brand-gold/10 transition-all duration-300 hover:-translate-y-1 active:scale-95 group">
             <Calendar className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
             Book Tour
           </Button>
@@ -215,7 +204,10 @@ export function Navbar() {
                 >
                   WhatsApp Us
                 </Button>
-                <Button className="w-full h-14 rounded-2xl bg-brand-gold text-brand-black font-extrabold text-lg">
+                <Button 
+                  onClick={() => window.open('https://wa.me/918547069562', '_blank')}
+                  className="w-full h-14 rounded-2xl bg-brand-gold text-brand-black font-extrabold text-lg"
+                >
                   Book A Tour
                 </Button>
               </div>

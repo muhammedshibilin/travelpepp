@@ -59,15 +59,19 @@ export function DestinationCard({ name, description, image, className }: Destina
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => window.open('https://wa.me/918547069562', '_blank')}
             className="flex items-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-bold text-brand-black shadow-xl transition-all hover:bg-brand-gold"
           >
             Explore Tours
             <ArrowUpRight className="h-4 w-4" />
           </motion.button>
           
-          <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-500 group-hover:bg-brand-gold group-hover:border-brand-gold">
+          <button
+            onClick={() => window.open('https://wa.me/918547069562', '_blank')}
+            className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-500 group-hover:bg-brand-gold group-hover:border-brand-gold"
+          >
             <ArrowUpRight className="h-6 w-6 text-white group-hover:text-brand-black" />
-          </div>
+          </button>
         </div>
       </div>
       

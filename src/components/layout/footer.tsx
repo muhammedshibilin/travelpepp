@@ -9,12 +9,40 @@ import {
   MapPin, 
   Globe, 
   Send,
-  Share2,
-  Instagram,
-  Facebook
+  Share2
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/ui/logo';
+
+const InstagramIcon = ({ className }: { className?: string }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
+const FacebookIcon = ({ className }: { className?: string }) => (
+  <svg 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
 
 const footerLinks = {
   company: [
@@ -27,10 +55,13 @@ const footerLinks = {
   ],
   destinations: [
     { name: 'Kashmir', href: '#kashmir' },
+    { name: 'Leh Ladakh', href: '#leh-ladakh' },
+    { name: 'Himachal Pradesh', href: '#himachal' },
+    { name: 'Uttarakhand', href: '#uttarakhand' },
     { name: 'Kerala', href: '#kerala' },
-    { name: 'Manali', href: '#manali' },
-    { name: 'Delhi', href: '#delhi' },
-    { name: 'South India', href: '#south-india' },
+    { name: 'Rajasthan', href: '#rajasthan' },
+    { name: 'Goa', href: '#goa' },
+    { name: 'Andaman & Nicobar', href: '#andaman' },
   ],
   support: [
     { name: 'Help Center', href: '#' },
@@ -144,14 +175,14 @@ export function Footer() {
               target="_blank"
               className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-brand-gold hover:text-brand-gold transition-all"
             >
-              <Instagram className="w-4 h-4" />
+              <InstagramIcon className="w-4 h-4" />
             </Link>
             <Link 
               href="https://www.facebook.com/travelpepp/" 
               target="_blank"
               className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:border-brand-gold hover:text-brand-gold transition-all"
             >
-              <Facebook className="w-4 h-4" />
+              <FacebookIcon className="w-4 h-4" />
             </Link>
           </div>
           

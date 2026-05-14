@@ -7,33 +7,33 @@ import { cn } from '@/lib/utils';
 
 const images = [
   {
-    url: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?q=80&w=1200&auto=format&fit=crop',
+    url: '/dest-kashmir.png',
     title: 'Serene Kashmir',
     span: 'col-span-1 row-span-2',
   },
   {
-    url: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1200&auto=format&fit=crop',
+    url: '/dest-kerala.png',
     title: 'Kerala Backwaters',
     span: 'col-span-2 row-span-1',
   },
   {
-    url: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=1200&auto=format&fit=crop',
-    title: 'Royal Rajasthan',
+    url: '/dest-manali.png',
+    title: 'Himalayan Manali',
     span: 'col-span-1 row-span-1',
   },
   {
-    url: 'https://images.unsplash.com/photo-1587474260584-1f20d4296c06?q=80&w=1200&auto=format&fit=crop',
-    title: 'Majestic India',
+    url: '/hero-bg.png',
+    title: 'Sonamarg Meadows',
     span: 'col-span-1 row-span-1',
   },
   {
-    url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1200&auto=format&fit=crop',
-    title: 'Golden Goa',
+    url: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop',
+    title: 'Munnar Tea Hills',
     span: 'col-span-1 row-span-2',
   },
   {
-    url: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1200&auto=format&fit=crop',
-    title: 'Spiritual Varanasi',
+    url: '/hero-india.png',
+    title: 'Majestic Delhi',
     span: 'col-span-2 row-span-1',
   },
 ];
@@ -74,7 +74,7 @@ function GalleryItem({ url, title, span, index }: { url: string; title: string; 
 
       <div className="absolute bottom-8 left-8 right-8">
         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-gold mb-1 block opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-          Cinematic
+          TravelPepp
         </span>
         <h4 className="text-2xl font-black text-white uppercase tracking-tighter opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 delay-100">
           {title}

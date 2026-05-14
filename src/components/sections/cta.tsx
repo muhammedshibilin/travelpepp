@@ -42,7 +42,10 @@ export function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-            <Button size="lg" className="h-20 px-12 rounded-full bg-brand-gold text-brand-black hover:bg-white hover:scale-105 transition-all duration-300 font-black text-xl group shadow-2xl shadow-brand-gold/30">
+            <Button 
+              onClick={() => window.open('https://wa.me/918547069562', '_blank')}
+              size="lg" className="h-20 px-12 rounded-full bg-brand-gold text-brand-black hover:bg-white hover:scale-105 transition-all duration-300 font-black text-xl group shadow-2xl shadow-brand-gold/30"
+            >
               Book Your Tour Now
               <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
             </Button>
