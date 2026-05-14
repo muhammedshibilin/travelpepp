@@ -15,24 +15,11 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 const navLinks = [
-  { name: 'Home', href: '#' },
-  { 
-    name: 'Destinations', 
-    href: '#destinations',
-    dropdown: [
-      { name: 'Kashmir', href: '#kashmir' },
-      { name: 'Leh Ladakh', href: '#leh-ladakh' },
-      { name: 'Himachal Pradesh', href: '#himachal' },
-      { name: 'Uttarakhand', href: '#uttarakhand' },
-      { name: 'Kerala', href: '#kerala' },
-      { name: 'Rajasthan', href: '#rajasthan' },
-    ]
-  },
-  { name: 'Packages', href: '#packages' },
-  { name: 'About', href: '#about' },
-  { name: 'Testimonials', href: '#testimonials' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Home', href: '/' },
+  { name: 'Destinations', href: '/destinations' },
+  { name: 'Packages', href: '/#packages' },
+  { name: 'About', href: '/#about' },
+  { name: 'Contact', href: '/#contact' },
 ];
 
 export function Navbar() {
@@ -103,7 +90,7 @@ export function Navbar() {
                     "text-sm font-semibold tracking-wide transition-all duration-300 relative py-2",
                     isScrolled 
                       ? activeSection === link.name ? "text-brand-blue" : "text-brand-black dark:text-brand-silver" 
-                      : activeSection === link.name ? "text-brand-gold" : "text-white/90"
+                      : activeSection === link.name ? "text-brand-gold" : "text-white/90 hover:text-white"
                   )}
                 >
                   {link.name}

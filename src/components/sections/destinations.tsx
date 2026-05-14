@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -262,11 +263,15 @@ function DestCard({ dest, index }: { dest: Destination; index: number }) {
 }
 
 // ── Section ────────────────────────────────────────────────────────────────────
-export function Destinations() {
+export function Destinations({ limit }: { limit?: number } = {}) {
   const [active, setActive] = useState<Category>('all');
 
-  const filtered =
+  let filtered =
     active === 'all' ? destinations : destinations.filter((d) => d.category === active);
+  
+  if (limit) {
+    filtered = filtered.slice(0, limit);
+  }
 
   return (
     <section id="destinations" className="bg-brand-silver py-32 dark:bg-brand-black overflow-hidden">
@@ -324,23 +329,22 @@ export function Destinations() {
         </motion.div>
 
         {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-sm font-medium text-brand-black/40 dark:text-white/30 mb-4">
-            Don't see your dream destination? We craft custom itineraries worldwide.
-          </p>
-          <button
-            onClick={() => window.open('https://wa.me/918547069562', '_blank')}
-            className="text-sm font-black uppercase tracking-[0.3em] text-brand-blue dark:text-brand-gold border-b-2 border-brand-gold pb-2 hover:text-brand-black dark:hover:text-white transition-all"
+        {limit && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="mt-16 text-center"
           >
-            Request Custom Destination →
-          </button>
-        </motion.div>
+            <Link
+              href="/destinations"
+              className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-brand-black dark:bg-white text-white dark:text-brand-black font-bold uppercase tracking-widest text-sm hover:scale-105 transition-all duration-300 shadow-xl"
+            >
+              View All Destinations →
+            </Link>
+          </motion.div>
+        )}
       </div>
     </section>
   );

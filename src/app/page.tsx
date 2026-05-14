@@ -1,6 +1,5 @@
 import { Hero } from "@/components/sections/hero";
 import { Destinations } from "@/components/sections/destinations";
-import { Packages } from "@/components/sections/packages";
 import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { Gallery } from "@/components/sections/gallery";
 import { Testimonials } from "@/components/sections/testimonials";
@@ -26,8 +25,7 @@ export default function Home() {
       <FAQSchema faqs={homeFaqs} />
       <Hero />
       <WhyChooseUs />
-      <Destinations />
-      <Packages />
+      <Destinations limit={3} />
       <Gallery />
       <Testimonials />
       <FAQ />
